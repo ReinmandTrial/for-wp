@@ -55,12 +55,12 @@ add_action( 'after_setup_theme', 'commerce_setup' );
 function commerce_scripts() {
 	// css
 	wp_enqueue_style( 'slick', get_template_directory_uri() . '/assets/css/slick.min.css' );
-	// wp_enqueue_style( 'fancybox', get_template_directory_uri() . '/assets/css/jquery.fancybox.css' );
+	wp_enqueue_style( 'fancybox', get_template_directory_uri() . '/assets/css/jquery.fancybox.min.css' );
 	wp_enqueue_style( 'commerce-style', get_stylesheet_uri() );
 
 	// js
 	wp_enqueue_script( 'slick', get_template_directory_uri() . '/assets/js/slick.min.js', ['jquery'], true );
-	// wp_enqueue_script( 'fancybox', get_template_directory_uri() . '/assets/js/jquery.fancybox-1.3.4.js', ['jquery'], true );
+	wp_enqueue_script( 'fancybox', get_template_directory_uri() . '/assets/js/jquery.fancybox.min.js', ['jquery'], true );
 	wp_enqueue_script( 'commerce-script', get_template_directory_uri() . '/assets/js/main.js', ['jquery', 'slick'], true );
 
 	wp_localize_script( 'jquery', 'site_data', array( 'ajaxurl' => admin_url( 'admin-ajax.php' ) ) );
